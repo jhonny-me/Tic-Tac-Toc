@@ -1,0 +1,1 @@
+{"version":3,"sources":["App.js"],"names":[],"mappings":";;;;;;;;AAGA;;;;;;;;;;+eAHA;;;;;IAKqB,G;;;;;;;;;;;gCAET,CAEP;;;;;;kBAJgB,G","file":"App-compiled.js","sourcesContent":["/**\n * Created by johnny on 15/01/2017.\n */\nimport React, {Component} from 'react'\n\nexport default class App extends Component {\n\n    reder() {\n        \n    }\n}"]}
