@@ -2,11 +2,13 @@
   <library name="Generated files" type="javaScript">
     <properties>
       <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/build/static/js/main.1c6c6119-compiled.js" />
         <item url="file://$PROJECT_DIR$/src/stories/App-compiled.js" />
         <item url="file://$PROJECT_DIR$/src/stories/Popup-compiled.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
+      <root url="file://$PROJECT_DIR$/build/static/js/main.1c6c6119-compiled.js" />
       <root url="file://$PROJECT_DIR$/src/stories/App-compiled.js" />
       <root url="file://$PROJECT_DIR$/src/stories/Popup-compiled.js" />
     </CLASSES>
