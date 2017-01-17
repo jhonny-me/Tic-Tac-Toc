@@ -2,6 +2,7 @@
  * Created by johnny on 15/01/2017.
  */
 import React, {Component} from 'react'
+import Popup from './Popup';
 require('../styles/App.css');
 
 export default class App extends Component {
@@ -14,24 +15,42 @@ export default class App extends Component {
         }
         this.state = {
             inputs: inputs,
-            input: 'X'
+            input: 'X',
+            openModal: false,
         };
         this.selectedInput = 'X';
     }
 
     componentDidMount() {
-
+        var that = this;
+        setTimeout(function(){
+            that.setState({openModal: true});
+        }, 1000)
     }
 
-    startGame = () => {
-
-    }
+    onSelectedInputChange = (e) => {
+        this.selectedInput = e;
+        this.setState({openModal: false});
+        const that = this;
+        if (e === 'O') {
+            setTimeout(function () {
+                that.aiMove()
+            }, 500);
+        }
+    };
 
     aiMove = () => {
+        if (this.state.input == this.selectedInput) {
+            return
+        }
         var index = 0;
         const inputs = this.state.inputs;
-        while (inputs[index]) {
+        if (inputs.toString() === ',,,,,,,,'){
             index = Math.floor(Math.random()*8);
+        }else {
+            while (inputs[index]) {
+                index = Math.floor(Math.random() * 8);
+            }
         }
         this.handleMove(index);
     }
@@ -72,6 +91,12 @@ export default class App extends Component {
                 return undefined
             });
             this.setState({inputs: initInputs, input: 'X'});
+            const that = this;
+            if (this.selectedInput == 'O') {
+                setTimeout(function () {
+                    that.aiMove()
+                }, 500);
+            }
         }
     }
 
@@ -119,6 +144,7 @@ export default class App extends Component {
                         {components}
                     </div>
                 </div>
+                <Popup open={this.state.openModal} didSelectValue={this.onSelectedInputChange}/>
             </div>
         );
     }

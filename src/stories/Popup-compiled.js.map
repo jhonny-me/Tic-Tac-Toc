@@ -1,0 +1,1 @@
+{"version":3,"sources":["Popup.js"],"names":[],"mappings":";;;;;;;;AAGA;;;;;;;;;;+eAHA;;;;;IAKqB,K;;;;;;;;;;;iCAER,CAER;;;;;;kBAJgB,K","file":"Popup-compiled.js","sourcesContent":["/**\n * Created by johnny on 17/01/2017.\n */\nimport React, {Component} from 'react';\n\nexport default class Popup extends Component {\n\n    render() {\n        \n    }\n}"]}
