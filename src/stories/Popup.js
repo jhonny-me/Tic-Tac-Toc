@@ -5,10 +5,6 @@ import React, {Component, PropTypes} from 'react';
 require('../styles/Popup.css');
 
 export default class Popup extends Component {
-    constructor(props) {
-        super(props);
-
-    }
 
     static propTypes = {
         open: PropTypes.bool,

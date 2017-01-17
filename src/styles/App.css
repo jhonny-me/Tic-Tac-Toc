@@ -4,9 +4,13 @@
     width: 320px;
     padding-top: 320px;
     margin: 60px auto;
-    background-color: darkgray;
+    background-color: transparent;
     position: relative;
     user-select: none;
+}
+
+body {
+    background-image: url("../resources/background.jpg");
 }
 
 h2 {
@@ -19,20 +23,55 @@ h2 {
     right: 0;
     bottom: 0;
     left: 0;
-    background-image: url("../resources/backgroud.jpg");
+    /*background-image: url("../resources/backgroud.jpg");*/
     font-family: "Bradley Hand";
 }
 
-div.content button {
-    width: 33.3%;
-    height: 33.3%;
-    line-height: 100%;
-    /*border: 1px double darkgray;*/
-    text-align: center;
+.lineOne {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 33.3%;
+    width: 2px;
+    background-color: black;
+}
+
+.lineTwo {
+    position: absolute;
+    top: 0;
+    right: 33.3%;
+    bottom: 0;
+    width: 2px;
+    background-color: black;
+}
+
+.lineThree {
+    position: absolute;
+    top: 33.3%;
+    right: 0;
+    left: 0;
+    height: 2px;
+    background-color: black;
+}
+
+.lineFour {
+    position: absolute;
+    right: 0;
+    bottom: 33.3%;
+    left: 0;
+    height: 2px;
+    background-color: black;
+}
+
+div.content a {
+    width: 33%;
+    height: 33%;
+    /*text-align: center;*/
     background-color: transparent;
-    vertical-align: bottom;
-    /*background-color: aquamarine;*/
+    vertical-align: top;
     font-family: "Bradley Hand";
     font-size: 40px;
-    display: inline-block;
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
 }

@@ -40,7 +40,7 @@ export default class App extends Component {
     };
 
     aiMove = () => {
-        if (this.state.input == this.selectedInput) {
+        if (this.state.input === this.selectedInput) {
             return
         }
         var index = 0;
@@ -64,7 +64,7 @@ export default class App extends Component {
             if (!inputs.includes(undefined)) {
                 return
             }
-            if (input != this.selectedInput) {
+            if (input !== this.selectedInput) {
                 that.aiMove()
             }
         });
@@ -82,7 +82,7 @@ export default class App extends Component {
         if (!result) {
             return
         }else {
-            if (result == true) {
+            if (result === true) {
                 alert('tie!')
             } else {
                 alert('winner ' + result)
@@ -92,7 +92,7 @@ export default class App extends Component {
             });
             this.setState({inputs: initInputs, input: 'X'});
             const that = this;
-            if (this.selectedInput == 'O') {
+            if (this.selectedInput === 'O') {
                 setTimeout(function () {
                     that.aiMove()
                 }, 500);
@@ -115,8 +115,8 @@ export default class App extends Component {
         for (var i=0;i<rules.length;i++){
             const rule = rules[i];
             if (inputs[rule[0]] &&
-                inputs[rule[0]] == inputs[rule[1]] &&
-                inputs[rule[1]] == inputs[rule[2]]){
+                inputs[rule[0]] === inputs[rule[1]] &&
+                inputs[rule[1]] === inputs[rule[2]]){
                 return inputs[rule[0]];
             }
         }
@@ -132,7 +132,7 @@ export default class App extends Component {
 
         var components = [];
         for (var i=0;i<this.state.inputs.length;i++){
-            components.push(<button id={i} key={i} onClick={this.onInputClick}>{this.state.inputs[i]}</button>)
+            components.push(<a id={i} key={i} onClick={this.onInputClick}>{this.state.inputs[i]}</a>)
         }
 
         return (
@@ -143,6 +143,10 @@ export default class App extends Component {
                     <div className="content">
                         {components}
                     </div>
+                    <div className="lineOne"></div>
+                    <div className="lineTwo"></div>
+                    <div className="lineThree"></div>
+                    <div className="lineFour"></div>
                 </div>
                 <Popup open={this.state.openModal} didSelectValue={this.onSelectedInputChange}/>
             </div>
